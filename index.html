@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project-2 Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="variable-section">
+            <h3>Variables</h3>
+            <hr>
+            <div class="variable-container">
+                <div class="var-nam">
+                    <h5>Variable name</h5>
+                    <input type="text" id="variable" placeholder="Enter variable">
+                    <div id="showAlert1" class="danger" style="display: none;">
+                        Variables cannot be a number or constants
+                    </div>
+                </div>
+                <div class="var-val">
+                    <h5>Variable value</h5>
+                    <input type="text" id="number" placeholder="Enter value & press Enter">
+                    <div id="showAlert2" class="danger" style="display: none;">
+                        Value is missing.
+                    </div>
+                </div>
+            </div>
+            <div class="var-res">
+                <h5>Stored Variables</h5>
+                <input type="text" id="storedVariables" readonly>
+                <div id="showAlert3" class="danger" style="display: none;">
+                    This variable has been used earlier. Please try another.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="calculator">
+            <div class="heading">Calculator</div>
+            <input type="text" id="input" name="display" placeholder="Enter Number(s)">
+            <input type="text" id="output" name="display" readonly placeholder="Result">
+            <div class="buttons">
+                <button class="rounded" onclick="appendToDisplay('e')" title="Please write e in parentheses">e</button>
+                <button class="rounded" onclick="appendToDisplay('Pi')">Pi</button>
+                <button class="clear rounded" onclick="clearAll()">C</button>
+                <button class="function rounded" onclick="appendToDisplay('sin')">sin</button>
+                <button class="function rounded" onclick="appendToDisplay('tan')">tan</button>
+                <button class="function rounded" onclick="appendToDisplay('cos')">cos</button>
+                <button class="function rounded" onclick="appendToDisplay('sqrt')">sqrt</button>
+                <button class="rounded" onclick="appendToDisplay('(')">(</button>
+                <button class="rounded" onclick="appendToDisplay(')')">)</button>
+                <button class="delete rounded" onclick="delCurrentEntity()">del</button>
+                <button class="operator rounded" onclick="appendToDisplay('+')">+</button>
+                <button class="rounded" onclick="appendToDisplay(7)">7</button>
+                <button class="rounded" onclick="appendToDisplay(8)">8</button>
+                <button class="rounded" onclick="appendToDisplay(9)">9</button>
+                <button class="operator rounded" onclick="appendToDisplay('-')">−</button>
+                <button class="rounded" onclick="appendToDisplay(4)">4</button>
+                <button class="rounded" onclick="appendToDisplay(5)">5</button>
+                <button class="rounded" onclick="appendToDisplay(6)">6</button>
+                <button class="operator rounded" onclick="appendToDisplay('*')">×</button>
+                <button class="rounded" onclick="appendToDisplay(1)">1</button>
+                <button class="rounded" onclick="appendToDisplay(2)">2</button>
+                <button class="rounded" onclick="appendToDisplay(3)">3</button>
+                <button class="operator rounded" onclick="appendToDisplay('/')">÷</button>
+                <button class="zero rounded" onclick="appendToDisplay(0)">0</button>
+                <button class="rounded" onclick="appendToDisplay('.')">.</button>
+                <button class="operator equals rounded" onclick="performCalculation()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

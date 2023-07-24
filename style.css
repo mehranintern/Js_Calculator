@@ -1,0 +1,398 @@
+@media screen and (min-width: 767px) {
+   body {
+    background-color: black;
+}
+
+.container-fluid {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+}
+
+.calculator {
+    width: 23%;
+    margin: 3% 0% 5% 10%;
+    background-color: black;
+    border-radius: 8px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.heading {
+    text-align: left;
+    font-size: 28px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+#input {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    text-align: right;
+    border-radius: 5px;
+}
+
+#input::placeholder {
+    font-size: 14px;
+    text-align: left;
+    color: rgb(64, 64, 64);
+}
+
+#output {
+    width: 100%;
+    margin-bottom: 4%;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.operator {
+    background-color: #EB9707;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #f57c00;
+}
+
+.equals {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.equals:hover {
+    background-color: #45a049;
+}
+
+.function {
+    background-color: #607d8b;
+    color: #fff;
+}
+
+.function:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.clear {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #d32f2f;
+}
+
+.delete {
+    color: white;
+}
+
+.delete:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.zero, .clear {
+    grid-column: span 2;
+}
+
+.variable-section {
+    color: white;
+    width: 40%;
+    height: 350px;
+    margin: 3% 0% 5% 5%;
+    background-color: black;
+    border-radius: 8px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.variable-section h3 {
+    text-align: center;
+}
+
+.variable-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.var-nam {
+    margin: 0% 5% 0% 5%;
+}
+
+.var-nam input {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+}
+
+.var-val input {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+}
+
+.var-res {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.var-res input {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+}
+.var-nam input::placeholder,
+.var-val input::placeholder,
+.calculator input::placeholder {
+    font-size: 14px;
+    text-align: left;
+    color: rgb(64, 64, 64);
+}
+
+.danger {
+    background-color: transparent;
+    border-color: transparent;
+    color: #c54d57;
+}
+  }
+body {
+    background-color: black;
+}
+
+.container-fluid {
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+}
+
+.calculator {
+    width: 23%;
+    margin: 3% 0% 5% 10%;
+    background-color: black;
+    border-radius: 8px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.heading {
+    text-align: left;
+    font-size: 28px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+#input {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    text-align: right;
+    border-radius: 5px;
+}
+
+#input::placeholder {
+    font-size: 14px;
+    text-align: left;
+    color: rgb(64, 64, 64);
+}
+
+#output {
+    width: 100%;
+    margin-bottom: 4%;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.operator {
+    background-color: #EB9707;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #f57c00;
+}
+
+.equals {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.equals:hover {
+    background-color: #45a049;
+}
+
+.function {
+    background-color: #607d8b;
+    color: #fff;
+}
+
+.function:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.clear {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #d32f2f;
+}
+
+.delete {
+    color: white;
+}
+
+.delete:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.zero, .clear {
+    grid-column: span 2;
+}
+
+.variable-section {
+    color: white;
+    width: 40%;
+    height: 350px;
+    margin: 3% 0% 5% 5%;
+    background-color: black;
+    border-radius: 8px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.variable-section h3 {
+    text-align: center;
+}
+
+.variable-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.var-nam {
+    margin: 0% 5% 0% 5%;
+}
+
+.var-nam input {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+}
+
+.var-val input {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+}
+
+.var-res {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.var-res input {
+    padding: 10px 10px 0px 10px;
+    font-size: 20px;
+    margin-bottom: 3%;
+    background-color: #b4afaf;
+    border: none;
+    border-radius: 5px;
+}
+.var-nam input::placeholder,
+.var-val input::placeholder,
+.calculator input::placeholder {
+    font-size: 14px;
+    text-align: left;
+    color: rgb(64, 64, 64);
+}
+
+.danger {
+    background-color: transparent;
+    border-color: transparent;
+    color: #c54d57;
+}
