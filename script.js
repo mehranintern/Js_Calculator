@@ -1,14 +1,14 @@
-let enteredNumber = '';
+let input = '';
 const inputField = document.getElementById("input");
 const outputField = document.getElementById("output");
 
 function appendToDisplay(value) {
-    if (enteredNumber === "0") {
+    if (input === "0") {
         inputField.value = value;
     } else {
         inputField.value += value;
     }
-    enteredNumber = inputField.value;
+    input = inputField.value;
 }
 
 function performCalculation() {
@@ -20,7 +20,7 @@ function performCalculation() {
 
     // Replace variable names with their values
     for (let variable in variables) {
-        const regExp = new RegExp('\\b' + variable + '\\b', 'g');
+        const regExp = new RegExp('\\b' + variable + '\\b', 'g'); //b is word boundary and g is for global
         input = input.replace(regExp, variables[variable]);
     }
 
@@ -53,34 +53,45 @@ function evaluateArray(array) {
 }
 
 function getValue(element) {
-    for (let num in variables) {
-        if (num === element) {
-            let val = variables[num];
-            return val;
+    let foundValue;
+
+    Object.entries(variables).forEach(([key, value]) => {
+        if (key === element) {
+            foundValue = value;
         }
-    }
+    });
+
+    return foundValue;
 }
+
 function replaceTrig(input) {
-    if (input.includes('sin')) {
-        input = input.replace('sin', 'Math.sin');
+    let replacedInput = input;
+
+    switch (true) {
+        case input.includes('sin'):
+            replacedInput = input.replace(/sin/g, 'Math.sin');
+            break;
+        case input.includes('cos'):
+            replacedInput = input.replace(/cos/g, 'Math.cos');
+            break;
+        case input.includes('tan'):
+            replacedInput = input.replace(/tan/g, 'Math.tan');
+            break;
+        case input.includes('sqrt'):
+            replacedInput = input.replace(/sqrt/g, 'Math.sqrt');
+            break;
+        default:
+            break;
     }
-    if (input.includes('cos')) {
-        input = input.replace('cos', 'Math.cos');
-    }
-    if (input.includes('tan')) {
-        input = input.replace('tan', 'Math.tan');
-    }
-    if (input.includes('sqrt')) {
-        input = input.replace('sqrt', 'Math.sqrt');
-    }
-    return input;
+    return replacedInput;
 }
+
 
 
 let variables = {}; // Object to store variable names and values
 function handleVariables() {
-    const variableName = document.getElementById("variable").value;
-    const variableValue = document.getElementById("number").value;
+    const variableName = document.getElementById("variableName").value;
+    const variableValue = document.getElementById("variableNumber").value;
 
     // Check if variableName is a number or a constant 
     if (!isNaN(variableName) || (variableName === 'e') || (variableName === 'Pi')) {
@@ -94,25 +105,25 @@ function handleVariables() {
         return;
     }
 
-    if (variableValue.length === 0) {
+    if (!variableValue.length) {
         document.getElementById("showAlert2").style.display = "block";
         return;
     }
 
     variables[variableName] = parseFloat(variableValue);
     document.getElementById("storedVariables").value = Object.keys(variables).join(", ");
-    document.getElementById("variable").value = "";
-    document.getElementById("number").value = "";
+    document.getElementById("variableName").value = "";
+    document.getElementById("variableNumber").value = "";
 }
 
 
-document.getElementById("variable").addEventListener("keypress", function (event) {
+document.getElementById("variableName").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         handleVariables();
     }
 });
 
-document.getElementById("number").addEventListener("keypress", function (event) {
+document.getElementById("variableNumber").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         handleVariables();
     }
@@ -122,7 +133,7 @@ document.getElementById("number").addEventListener("keypress", function (event) 
 function clearAll() {
     inputField.value = '';
     outputField.value = '';
-    enteredNumber = '';
+    input = '';
 }
 
 
